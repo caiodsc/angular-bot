@@ -1,0 +1,7 @@
+{
+  "name": "bot_cancelamento",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,96 @@
+{
+  "array":[
+    {
+      "messageId":"1",
+      "userId":"140000198202211138",
+      "userName":"Bot",
+      "userImgUrl":"./assets/user.jpg",
+      "toUserId":"210000198410281948",
+      "toUserName":"Hancock",
+      "userAvatar":"./assets/to-user.jpg",
+      "time":1488349800000,
+      "message":"We build our computer (systems) the way we build our cities: over time, without a plan, on top of ruins.",
+      "status":"success",
+      "type": "default"
+
+    },
+    {
+      "messageId":"2",
+      "userId":"210000198410281948",
+      "userName":"Caio",
+      "userImgUrl":"./assets/to-user.jpg",
+      "toUserId":"140000198202211138",
+      "toUserName":"Luff",
+      "userAvatar":"./assets/user.jpg",
+      "time":1491034800000,
+      "message":"What one programmer can do in one month, two programmers can do in two months.",
+      "status":"success",
+      "type": "default"
+    },
+    {
+      "messageId":"3",
+      "userId":"140000198202211138",
+      "userName":"Bot",
+      "userImgUrl":"./assets/user.jpg",
+      "toUserId":"210000198410281948",
+      "toUserName":"Hancock",
+      "userAvatar":"./assets/to-user.jpg",
+      "time":1491034920000,
+      "message":"Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
+      "status":"success",
+      "type": "default"
+    },
+    {
+      "messageId":"5",
+      "userId":"210000198410281948",
+      "userName":"Caio",
+      "userImgUrl":"./assets/to-user.jpg",
+      "toUserId":"140000198202211138",
+      "toUserName":"Luff",
+      "userAvatar":"./assets/user.jpg",
+      "time":1491108720000,
+      "message":"How did you know so much about computers?",
+      "status":"success",
+      "type": "default"
+    },
+    {
+      "messageId":"6",
+      "userId":"140000198202211138",
+      "userName":"Bot",
+      "userImgUrl":"./assets/user.jpg",
+      "toUserId":"210000198410281948",
+      "toUserName":"Hancock",
+      "userAvatar":"./assets/to-user.jpg",
+      "time":1491231120000,
+      "message":"Olá 😃\n Você possui novas solicitações de aprovação para análise!",
+      "status":"success",
+      "type": "quick-reply"
+    },
+    {
+      "messageId":"7",
+      "userId":"210000198410281948",
+      "userName":"Caio",
+      "userImgUrl":"./assets/user.jpg",
+      "toUserId":"210000198410281948",
+      "toUserName":"Hancock",
+      "userAvatar":"./assets/user.jpg",
+      "time":1491231150000,
+      "message":"Aprovar",
+      "status":"success",
+      "type": "default"
+    },
+    {
+      "messageId":"8",
+      "userId":"140000198202211138",
+      "userName":"Bot",
+      "userImgUrl":"./assets/user.jpg",
+      "toUserId":"210000198410281948",
+      "toUserName":"Hancock",
+      "userAvatar":"./assets/to-user.jpg",
+      "time":1491231120000,
+      "message":"Desculpa, aconteceu algum problema na hora realizar a aprovação, tente mais tarde!",
+      "status":"success",
+      "type": "card"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<!--
+  Generated template for the ServiceDeskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title mode="ios">Service Desk</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only><img src="../assets/imgs/bemol.logo.png" style="display:inline-block" height="40px"/></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <br>
+  <h4 text-center>Encontrou algum erro? Comunique o nosso Service Desk!</h4>
+  <form #form="ngForm" (ngSubmit)="logForm(form)" novalidate>
+    <ion-item>
+      <ion-label>Título</ion-label>
+      <ion-input type="text" required [(ngModel)]="todo.title" ngControl="title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descrição</ion-label>
+      <ion-textarea style="height: 200px;" [(ngModel)]="todo.description" ngControl="description" name="description"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" float-end>Enviar</button>
+  </form>
+</ion-content>

@@ -1,0 +1,31 @@
+<!--<ion-card>
+  <img src=""/>
+  <ion-card-content>
+    <h2>
+      Opções
+    </h2>
+    <ion-list>
+      <hr>
+      <button style="text-align: center" menuClose ion-item *ngFor="let b of buttons" (click)="console.log('oi')">
+        <a>{{b.title}}</a>
+      </button>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+-->
+<ion-card no-border no-padding no-margin>
+  <ion-card-header>
+    Opções
+  </ion-card-header>
+  <ion-card-content style="text-align: center">
+    <button clear ion-button (click)="quickReply(0)">Mais Opções</button>
+    <button clear ion-button (click)="quickReply(1)">Menu Inicial</button>
+  </ion-card-content>
+</ion-card>
+<!--
+<div style="background-color: white; position: relative">
+Opções
+<button clear ion-button (click)="quickReply(0)">Ocupado</button>
+<button clear ion-button (click)="quickReply(1)">Aprovar</button>
+</div>
+-->
