@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, Output, Renderer2} from '@angular/core';
-import {ChatMessage} from "../../providers/chat-service/chat-service";
+import { ChatMessage, QuickRepliesTemplate, CardTemplate} from "../../providers/chat-service/chat-service";
 
 /**
  * Generated class for the QuickReplyComponent component.
@@ -20,12 +20,13 @@ export class QuickReplyComponent {
       "userId":"210000198410281948",
       "userName":"Bot",
       "toUserId":"140000198202211138",
-      "userAvatar":"./assets/to-user.jpg",
+      "userAvatar":"./assets/user.jpg",
       "time":1488349800000,
       "message":"Ocupado",
       "status":"success",
       "type": "default"
-
+      //"quickReplies": new Array<QuickRepliesTemplate>(),
+      //"card": new CardTemplate()
     },
     {
       "messageId":"7",
@@ -37,6 +38,8 @@ export class QuickReplyComponent {
       "message":"Aprovar",
       "status":"success",
       "type": "default"
+      //"quickReplies": new Array<QuickRepliesTemplate>(),
+      //"card": new CardTemplate()
     }
   ];
   @Output() clickQuickReply = new EventEmitter<any>();

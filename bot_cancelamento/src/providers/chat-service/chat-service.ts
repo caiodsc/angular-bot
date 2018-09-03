@@ -15,10 +15,25 @@ export class ChatMessage {
   postback?: string;
   status: string;
   type: string;
+  quickReplies?: QuickRepliesTemplate[];
+  card?: CardTemplate;
 }
 
+export class QuickRepliesTemplate {
+  name: string;
+  postback: string;
+}
 
+export class CardTemplate {
+  imageUrl?: string;
+  title: string;
+  buttons: ButtonsTemplate[];
+}
 
+export class ButtonsTemplate{
+  name: string;
+  postback: string;
+}
 
 export class UserInfo {
   id: string;
@@ -40,6 +55,10 @@ export class ChatService {
   constructor(public http: HttpClient, private events: Events) {
     console.log('Hello ChatServiceProvider Provider');
   }
+  getFromServer(){
+    return this.http.get<ChatMessage>('http://localhost:4567/teste')
+      .pipe(map(response => response));
+  }
 
   mockNewMsg(msg) {
     const mockMsg: ChatMessage = {
@@ -51,7 +70,9 @@ export class ChatService {
       time: Date.now(),
       message: msg.message,
       status: 'success',
-      type: 'default'
+      type: 'default',
+      quickReplies: new Array<QuickRepliesTemplate>(),
+      card: new CardTemplate()
     };
 
     setTimeout(() => {

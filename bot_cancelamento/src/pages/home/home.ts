@@ -1,6 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {Content, Events, NavController} from 'ionic-angular';
 import {ChatMessage, UserInfo, ChatService} from "../../providers/chat-service/chat-service";
+import {AuthService, User} from "../../providers/auth-service/auth-service";
 
 @Component({
   selector: 'page-home',
@@ -16,9 +17,10 @@ export class HomePage {
   toUser: UserInfo;
   editorMsg = '';
   showEmojiPicker = false;
-
+  userObj: User;
   constructor(public navCtrl: NavController, private chatService: ChatService,
-              private events: Events) {
+              private events: Events, private auth: AuthService) {
+    this.userObj = auth.getUserInfo();
     this.user = {
       id:'210000198410281948',
       name:'Caio',
@@ -31,12 +33,16 @@ export class HomePage {
     };
   }
   ionViewDidEnter() {
+
     //get message list
     this.getMsg();
     // Subscribe to received  new message events
     this.events.subscribe('chat:received', msg => {
       this.pushNewMsg(msg);
-    })
+    });
+
+    //this.chatService.getFromServer().subscribe(
+    //  res =>  this.events.publish('chat:received', res));
   }
 
   ionViewWillLeave() {
@@ -116,6 +122,10 @@ export class HomePage {
   }
 
   clickQuickReply(e){
+    console.log(e);
+    this.pushNewMsg(e);
+  }
+  clickCard(e){
     console.log(e);
     this.pushNewMsg(e);
   }

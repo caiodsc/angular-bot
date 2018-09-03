@@ -18,7 +18,7 @@
          class="message"
          [class.left]=" msg.userId === toUser.id "
          [class.right]=" msg.userId === user.id ">
-      <img *ngIf="(i > 0 && msg.userId != msgList[i-1].userId) || i === 0" class="user-img" [src]="msg.userAvatar" alt="" src="">
+      <img *ngIf="(i > 0 && msg.userId != msgList[i-1].userId) || i === 0" class="user-img" [src]="msg.userId === toUser.id ? msg.userAvatar : userObj.avatar | safe" alt="" src="">
       <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner>
       <div class="msg-detail">
         <div *ngIf="(i > 0 && msg.userId != msgList[i-1].userId) || i === 0" class="msg-info">
@@ -38,7 +38,7 @@
       </div>
       <div style="padding-left: 60px;" class="p-left" *ngIf="msg.type === 'card'">
         <br>
-          <card></card>
+          <card (clickCard)="clickCard($event)"></card>
       </div>
     </div>
 

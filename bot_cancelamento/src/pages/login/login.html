@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Chatbot de Cancelamentos - Bemol</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="imgcontainer">
+    <img src="../assets/to-user.jpg" alt="Avatar" class="avatar">
+  </div>
+<form (ngSubmit)="login()" #registerForm="ngForm">
+
+
+  <div class="container">
+    <label><b>CPF</b></label>
+    <input [textMask]="{mask: cpf}" type="text" placeholder="Digite seu CPF" name="cpf" [(ngModel)]="registerCredentials.cpf" required>
+
+    <label ><b>Data de Nascimento</b></label>
+    <input [textMask]="{mask: birthdate}" type="text" placeholder="Digite sua data de nascimento" name="birthdate" [(ngModel)]="registerCredentials.birthdate" required>
+
+    <button type="submit" [disabled]="!registerForm.form.valid">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+</form>
+</ion-content>
+<ion-footer>
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</ion-footer>
+
