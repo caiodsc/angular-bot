@@ -34,9 +34,18 @@ export class HomePage {
       avatar: './assets/to-user.jpg'
     };
 
+
     //By default event name is 'channel name'. But you can pass from backend field { action: 'MyEventName'}
 
 
+  }
+
+  ionViewDidLoad(){
+    this.broadcaster.on<string>('CreateMessage').subscribe(
+      message => {
+        console.log(message);
+      }
+    );
   }
   ionViewDidEnter() {
 
@@ -51,13 +60,6 @@ export class HomePage {
     //  res =>  this.events.publish('chat:received', res));
   }
 
-  ionViewDidLoad(){
-    this.broadcaster.on<string>('CreateMessage').subscribe(
-      message => {
-        console.log(message);
-      }
-    );
-  }
   ionViewWillLeave() {
     // unsubscribe
     this.events.unsubscribe('chat:received');
