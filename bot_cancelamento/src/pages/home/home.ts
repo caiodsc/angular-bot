@@ -2,6 +2,8 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {Content, Events, NavController} from 'ionic-angular';
 import {ChatMessage, UserInfo, ChatService} from "../../providers/chat-service/chat-service";
 import {AuthService, User} from "../../providers/auth-service/auth-service";
+import { Ng2Cable, Broadcaster } from 'ng2-cable';
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'page-home',
@@ -19,7 +21,7 @@ export class HomePage {
   showEmojiPicker = false;
   userObj: User;
   constructor(public navCtrl: NavController, private chatService: ChatService,
-              private events: Events, private auth: AuthService) {
+              private events: Events, private auth: AuthService, private ng2cable: Ng2Cable, private broadcaster: Broadcaster) {
     this.userObj = auth.getUserInfo();
     this.user = {
       id:'210000198410281948',
@@ -31,6 +33,10 @@ export class HomePage {
       name:'Bot',
       avatar: './assets/to-user.jpg'
     };
+
+    //By default event name is 'channel name'. But you can pass from backend field { action: 'MyEventName'}
+
+
   }
   ionViewDidEnter() {
 
@@ -45,6 +51,13 @@ export class HomePage {
     //  res =>  this.events.publish('chat:received', res));
   }
 
+  ionViewDidLoad(){
+    this.broadcaster.on<string>('CreateMessage').subscribe(
+      message => {
+        console.log(message);
+      }
+    );
+  }
   ionViewWillLeave() {
     // unsubscribe
     this.events.unsubscribe('chat:received');

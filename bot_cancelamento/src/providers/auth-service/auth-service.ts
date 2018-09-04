@@ -42,7 +42,7 @@ export class AuthService {
       return Observable.create(observer => {
 
         // At this point make a request to your backend to make a real check!
-        this.http.post('http://1248d760.ngrok.io/login', "cpf=" + credentials.cpf + "&" + "birthdate=" + credentials.birthdate, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+        this.http.post('http://40a039b0.ngrok.io/login', "cpf=" + credentials.cpf + "&" + "birthdate=" + credentials.birthdate, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
           .pipe(map(res => res)) // or any other operator)
           .subscribe(res => {
             if (res["EX_STATUS"] == "00"){

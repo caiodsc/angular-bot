@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import {ServiceDeskPage} from "../pages/service-desk/service-desk";
 import {LoginPage} from "../pages/login/login";
+import {Ng2Cable} from "ng2-cable";
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +17,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private ng2cable: Ng2Cable) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -25,6 +26,7 @@ export class MyApp {
       { title: 'Chatbot', component: HomePage, icon: 'md-chatboxes' },
       { title: 'Service Desk', component: ServiceDeskPage, icon: 'md-headset' }
   ];
+    this.ng2cable.subscribe('http://40a039b0.ngrok.io/cable', 'ChatChannel', { room: 'chat' });
 
   }
 

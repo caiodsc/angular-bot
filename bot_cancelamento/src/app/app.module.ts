@@ -17,6 +17,7 @@ import {AuthService} from '../providers/auth-service/auth-service';
 import {LoginPage} from "../pages/login/login";
 import {TextMaskModule} from "angular2-text-mask";
 import {SafePipe} from "../pipes/safe/safe";
+import {Broadcaster, Ng2Cable} from "ng2-cable";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,9 @@ import {SafePipe} from "../pipes/safe/safe";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ChatService,
-    AuthService
+    AuthService,
+    Ng2Cable,
+    Broadcaster
   ]
 })
 export class AppModule {}
